@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — EverydayUXLab</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — EverydayUXLab</title>
 
   <script>
     if (localStorage.getItem('daynight-theme') === 'carbon') {
@@ -11,93 +11,57 @@
     }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <div class="app-container">
 
-  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="nav-container">
-      <div class="nav-left">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">UX</div>
-          EverydayUXLab
-        </a>
-      </div>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">UX</div>
+        EverydayUXLab
+      </a>
     </div>
   </nav>
 
-  <!-- Main -->
   <main class="main-content">
 
-    <div class="page-header">
-      <h1 class="greeting">UX Audit Portfolio</h1>
-      <p class="greeting-sub">Anonymized audit showcases</p>
-    </div>
+    <header class="page-header">
+      <h1 class="greeting">Audit Case Studies</h1>
+      <p class="greeting-sub">
+        Anonymized UX audits across internal systems and AI platforms
+      </p>
+    </header>
 
     <div class="card">
 
-      <!-- PROJECT 1 (2 images) -->
       <div class="ux-project">
         <h4>Internal MLOps Monitoring Dashboard</h4>
-        <p class="meta">AI platform · Internal tooling</p>
+        <p class="meta">AI platform · Reduced operational uncertainty</p>
         <div class="ux-carousel">
-          <img src="assets/mlops-dashboard-ux-audit/1.png">
-          <img src="assets/mlops-dashboard-ux-audit/2.png">
+          <img src="assets/mlops-dashboard-ux-audit/1.png" />
+          <img src="assets/mlops-dashboard-ux-audit/2.png" />
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
       <div class="ux-project">
-        <h4>Admin Panel UX Review — Data Platform</h4>
-        <p class="meta">Admin tools · Data infra</p>
+        <h4>Admin Panel — Data Platform</h4>
+        <p class="meta">Admin tools · Improved error discoverability</p>
         <div class="ux-carousel">
-          <img src="assets/data-platform-admin-ux/1.png">
-          <img src="assets/data-platform-admin-ux/2.png">
-          <img src="assets/data-platform-admin-ux/3.png">
-          <img src="assets/data-platform-admin-ux/4.png">
-          <img src="assets/data-platform-admin-ux/5.png">
+          <img src="assets/data-platform-admin-ux/1.png" />
+          <img src="assets/data-platform-admin-ux/2.png" />
+          <img src="assets/data-platform-admin-ux/3.png" />
         </div>
       </div>
 
-      <!-- PROJECT 3 -->
       <div class="ux-project">
-        <h4>AI Prompt Flow & Response UX</h4>
-        <p class="meta">AI product · Prompt UX</p>
+        <h4>AI Prompt & Response UX</h4>
+        <p class="meta">AI product · Reduced hallucation risk</p>
         <div class="ux-carousel">
-          <img src="assets/ai-prompt-flow-ux/1.png">
-          <img src="assets/ai-prompt-flow-ux/2.png">
-          <img src="assets/ai-prompt-flow-ux/3.png">
-          <img src="assets/ai-prompt-flow-ux/4.png">
-          <img src="assets/ai-prompt-flow-ux/5.png">
-        </div>
-      </div>
-
-      <!-- PROJECT 4 -->
-      <div class="ux-project">
-        <h4>Developer Configuration UX Audit</h4>
-        <p class="meta">Developer tools</p>
-        <div class="ux-carousel">
-          <img src="assets/developer-config-ux-audit/1.png">
-          <img src="assets/developer-config-ux-audit/2.png">
-          <img src="assets/developer-config-ux-audit/3.png">
-          <img src="assets/developer-config-ux-audit/4.png">
-          <img src="assets/developer-config-ux-audit/5.png">
-        </div>
-      </div>
-
-      <!-- PROJECT 5 -->
-      <div class="ux-project">
-        <h4>Performance Perception Review</h4>
-        <p class="meta">Analytics platform</p>
-        <div class="ux-carousel">
-          <img src="assets/performance-perception-ux/1.png">
-          <img src="assets/performance-perception-ux/2.png">
-          <img src="assets/performance-perception-ux/3.png">
-          <img src="assets/performance-perception-ux/4.png">
-          <img src="assets/performance-perception-ux/5.png">
+          <img src="assets/ai-prompt-flow-ux/1.png" />
+          <img src="assets/ai-prompt-flow-ux/2.png" />
         </div>
       </div>
 
@@ -106,23 +70,10 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 EverydayUXLab</p>
+    © 2026 EverydayUXLab
   </footer>
 
 </div>
-
-<!-- Image Modal -->
-<script>
-document.querySelectorAll('.ux-carousel img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.createElement('div');
-    modal.className = 'ux-modal active';
-    modal.innerHTML = `<img src="${img.src}">`;
-    modal.onclick = () => modal.remove();
-    document.body.appendChild(modal);
-  });
-});
-</script>
 
 <script src="script.js"></script>
 </body>

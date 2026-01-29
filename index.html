@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EverydayUXLab — Performance-Driven UX Audits</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EverydayUXLab — UX & Performance Audits</title>
 
   <script>
     if (localStorage.getItem('daynight-theme') === 'carbon') {
@@ -11,27 +11,23 @@
     }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <div class="app-container">
 
-  <!-- Top Nav -->
+  <!-- Navigation -->
   <nav class="top-nav">
     <div class="nav-container">
-      <div class="nav-left">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">UX</div>
-          EverydayUXLab
-        </a>
-      </div>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">UX</div>
+        EverydayUXLab
+      </a>
 
-      <div class="nav-right">
-        <div class="theme-toggle">
-          <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')">☀</button>
-          <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')">🌙</button>
-        </div>
+      <div class="theme-toggle">
+        <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')">☀</button>
+        <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')">🌙</button>
       </div>
     </div>
   </nav>
@@ -39,57 +35,59 @@
   <!-- Main -->
   <main class="main-content">
 
-    <div class="page-header">
+    <header class="page-header">
       <h1 class="greeting">Performance-Driven UX Audits</h1>
       <p class="greeting-sub">
-        We help engineering-led teams reduce friction, confusion, and perceived slowness —
-        without backend rewrites or risky redesigns.
+        We help engineering-led teams eliminate UX friction, confusion, and
+        perceived slowness — without redesigns or backend rewrites.
       </p>
-    </div>
+    </header>
 
-    <div class="stats-grid">
+    <section class="stats-grid">
       <div class="stat-card">
-        <div class="stat-label">Audit Turnaround</div>
+        <div class="stat-label">Audit Delivery</div>
         <div class="stat-value">7–10 days</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Backend Changes</div>
-        <div class="stat-value">0</div>
+        <div class="stat-value">None</div>
       </div>
       <div class="stat-card">
-        <div class="stat-label">Focus</div>
+        <div class="stat-label">Primary Focus</div>
         <div class="stat-value">Clarity & Trust</div>
       </div>
       <div class="stat-card">
-        <div class="stat-label">Best For</div>
+        <div class="stat-label">Best Fit</div>
         <div class="stat-value">Internal Tools</div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h3 class="card-title">What We Do</h3>
       <p class="card-subtitle">
-        UX audits for internal tools, AI systems, DevOps dashboards, and data platforms —
-        grounded in real system behavior.
+        UX audits for internal tools, AI systems, DevOps dashboards,
+        and data platforms — grounded in real system behavior.
       </p>
 
-      <ul style="margin-top:1rem; padding-left:1.25rem;">
-        <li>Internal tool UX audits</li>
+      <ul class="service-list">
+        <li>Internal tooling UX audits</li>
         <li>AI prompt & response UX reviews</li>
         <li>Performance-perception fixes</li>
-        <li>Safety & misconfiguration risk reduction</li>
+        <li>Error states & misconfiguration risk reduction</li>
       </ul>
 
-      <div style="margin-top:1.5rem;">
-        <a href="projects.html" class="btn btn-primary">View Portfolio</a>
-        <a href="mailto:contact@everydayuxlab.com" class="btn btn-secondary">Request Audit</a>
+      <div class="cta-row">
+        <a href="projects.html" class="btn btn-primary">View Case Studies</a>
+        <a href="mailto:contact@everydayuxlab.com" class="btn btn-secondary">
+          Request an Audit
+        </a>
       </div>
-    </div>
+    </section>
 
   </main>
 
   <footer class="footer">
-    <p>© 2026 EverydayUXLab — UX & Performance Audits</p>
+    © 2026 EverydayUXLab — UX & Performance Audits
   </footer>
 
 </div>
