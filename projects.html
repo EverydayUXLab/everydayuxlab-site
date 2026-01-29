@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Studies — EverydayUXLab</title>
+  <title>Portfolio — EverydayUXLab</title>
 
   <script>
     if (localStorage.getItem('daynight-theme') === 'carbon') {
@@ -29,39 +29,49 @@
   <main class="main-content">
 
     <header class="page-header">
-      <h1 class="greeting">Audit Case Studies</h1>
-      <p class="greeting-sub">
-        Anonymized UX audits across internal systems and AI platforms
-      </p>
+      <h1 class="greeting">Portfolio</h1>
+      <p class="greeting-sub">Anonymized UX audit case studies</p>
     </header>
 
     <div class="card">
 
+      <!-- PROJECT 1 -->
       <div class="ux-project">
         <h4>Internal MLOps Monitoring Dashboard</h4>
         <p class="meta">AI platform · Reduced operational uncertainty</p>
-        <div class="ux-carousel">
-          <img src="assets/mlops-dashboard-ux-audit/1.png" />
-          <img src="assets/mlops-dashboard-ux-audit/2.png" />
+
+        <div class="slideshow-container">
+          <img class="ux-slide mlops" src="assets/mlops-dashboard-ux-audit/1.png">
+          <img class="ux-slide mlops" src="assets/mlops-dashboard-ux-audit/2.png">
+
+          <button class="slide-btn prev" onclick="plusSlides(-1, 'mlops')">&#10094;</button>
+          <button class="slide-btn next" onclick="plusSlides(1, 'mlops')">&#10095;</button>
+        </div>
+
+        <div class="slide-indicators">
+          <button onclick="currentSlide(1, 'mlops')">1</button>
+          <button onclick="currentSlide(2, 'mlops')">2</button>
         </div>
       </div>
 
+      <!-- PROJECT 2 -->
       <div class="ux-project">
-        <h4>Admin Panel — Data Platform</h4>
-        <p class="meta">Admin tools · Improved error discoverability</p>
-        <div class="ux-carousel">
-          <img src="assets/data-platform-admin-ux/1.png" />
-          <img src="assets/data-platform-admin-ux/2.png" />
-          <img src="assets/data-platform-admin-ux/3.png" />
-        </div>
-      </div>
+        <h4>Admin Panel UX Review</h4>
+        <p class="meta">Data platform · Improved error discoverability</p>
 
-      <div class="ux-project">
-        <h4>AI Prompt & Response UX</h4>
-        <p class="meta">AI product · Reduced hallucation risk</p>
-        <div class="ux-carousel">
-          <img src="assets/ai-prompt-flow-ux/1.png" />
-          <img src="assets/ai-prompt-flow-ux/2.png" />
+        <div class="slideshow-container">
+          <img class="ux-slide admin" src="assets/data-platform-admin-ux/1.png">
+          <img class="ux-slide admin" src="assets/data-platform-admin-ux/2.png">
+          <img class="ux-slide admin" src="assets/data-platform-admin-ux/3.png">
+
+          <button class="slide-btn prev" onclick="plusSlides(-1, 'admin')">&#10094;</button>
+          <button class="slide-btn next" onclick="plusSlides(1, 'admin')">&#10095;</button>
+        </div>
+
+        <div class="slide-indicators">
+          <button onclick="currentSlide(1, 'admin')">1</button>
+          <button onclick="currentSlide(2, 'admin')">2</button>
+          <button onclick="currentSlide(3, 'admin')">3</button>
         </div>
       </div>
 
