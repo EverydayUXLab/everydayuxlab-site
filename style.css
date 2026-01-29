@@ -1,100 +1,293 @@
-/* ==============================
-   Compact UX Carousel (100px)
-   ============================== */
+/* ========================================
+   EverydayUXLab 
+   ======================================== */
 
-.ux-carousel {
-  position: relative;
-  height: 100px;
-  margin: 16px 0 24px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #0b0f14;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Viewport */
-.carousel__viewport {
+/* ===== Theme Variables ===== */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-surface: #f1f5f9;
+  --border: #e5e7eb;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent: #2563eb;
+  --accent-soft: rgba(37,99,235,0.1);
+  --shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+html.carbon,
+body.carbon {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #171717;
+  --bg-surface: #1f1f1f;
+  --border: #2e2e2e;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56,189,248,0.15);
+}
+
+/* ===== Base ===== */
+html {
+  background: var(--bg-secondary);
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ===== Layout ===== */
+.app-container {
   display: flex;
-  height: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* ===== Navigation ===== */
+.top-nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-icon {
+  background: var(--accent);
+  color: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  display: flex;
+  gap: .5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .25rem;
+}
+
+.theme-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.theme-btn.active {
+  background: var(--bg-primary);
+  color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Headers ===== */
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.greeting-sub {
+  color: var(--text-secondary);
+  margin-top: .25rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Stats ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.stat-label {
+  font-size: .8rem;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: .25rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .6rem 1.1rem;
+  border-radius: 10px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+/* ======================================================
+   PORTFOLIO / CAROUSEL
+   ====================================================== */
+
+.ux-project {
+  margin-bottom: 2.5rem;
+}
+
+.ux-project h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.meta {
+  font-size: .8rem;
+  color: var(--text-secondary);
+  margin-bottom: .75rem;
+}
+
+/* ===== Compact Carousel ===== */
+.ux-carousel {
+  display: flex;
+  gap: .5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  padding-bottom: .5rem;
 }
 
-.carousel__viewport::-webkit-scrollbar {
-  display: none;
+.ux-carousel::-webkit-scrollbar {
+  height: 6px;
 }
 
-/* Slides */
-.carousel__slide {
-  flex: 0 0 auto;
-  width: 140px;
-  height: 100%;
-  scroll-snap-align: start;
-  position: relative;
+.ux-carousel::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.ux-carousel img {
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 8px;
   cursor: zoom-in;
+  scroll-snap-align: start;
+  transition: transform .15s ease, opacity .15s ease;
 }
 
-.carousel__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.25s ease;
+.ux-carousel img:hover {
+  transform: scale(1.03);
+  opacity: .95;
 }
 
-.carousel__slide img:hover {
-  transform: scale(1.05);
-}
-
-/* ==============================
-   Optional Auto-scroll (Desktop)
-   ============================== */
-
-@media (hover: hover) {
-  .carousel__viewport {
-    animation: autoscroll 18s linear infinite;
-  }
-
-  .ux-carousel:hover .carousel__viewport {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes autoscroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ==============================
-   Lightbox (Image Magnify)
-   ============================== */
-
-.lightbox {
+/* ===== Image Modal ===== */
+.ux-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
+  background: rgba(0,0,0,.85);
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+.ux-modal img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 12px;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .ux-carousel {
-    height: 80px;
+/* ===== Footer ===== */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .8rem;
+  color: var(--text-secondary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem;
   }
 
-  .carousel__slide {
-    width: 120px;
+  .greeting {
+    font-size: 1.6rem;
+  }
+
+  .ux-carousel img {
+    height: 80px;
   }
 }

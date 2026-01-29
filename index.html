@@ -1,169 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EverydayUXLab — Performance-Driven UX Audits</title>
-  <meta name="description" content="Performance-driven UX audits for internal tools, AI products, and engineering platforms." />
-  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    if (localStorage.getItem('daynight-theme') === 'carbon') {
+      document.documentElement.classList.add('carbon');
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<main class="main-content">
+<div class="app-container">
 
-  <!-- Page Header -->
-  <div class="page-header">
-    <h1 class="greeting">EverydayUXLab</h1>
-    <p class="greeting-sub">
-      Performance-Driven UX Audits for Internal & AI Tools
-    </p>
-  </div>
+  <!-- Top Nav -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">UX</div>
+          EverydayUXLab
+        </a>
+      </div>
 
-  <!-- Portfolio Section -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <h3 class="card-title">Selected UX Audit Work</h3>
-        <p class="card-subtitle">
-          Anonymized case studies · Click any image to expand
-        </p>
+      <div class="nav-right">
+        <div class="theme-toggle">
+          <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')">☀</button>
+          <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')">🌙</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main-content">
+
+    <div class="page-header">
+      <h1 class="greeting">Performance-Driven UX Audits</h1>
+      <p class="greeting-sub">
+        We help engineering-led teams reduce friction, confusion, and perceived slowness —
+        without backend rewrites or risky redesigns.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Audit Turnaround</div>
+        <div class="stat-value">7–10 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Backend Changes</div>
+        <div class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Focus</div>
+        <div class="stat-value">Clarity & Trust</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Best For</div>
+        <div class="stat-value">Internal Tools</div>
       </div>
     </div>
 
-    <div class="card-content">
+    <div class="card">
+      <h3 class="card-title">What We Do</h3>
+      <p class="card-subtitle">
+        UX audits for internal tools, AI systems, DevOps dashboards, and data platforms —
+        grounded in real system behavior.
+      </p>
 
-      <!-- PROJECT 1 (2 images) -->
-      <div class="portfolio-block">
-        <h4>Internal MLOps Monitoring Dashboard UX Audit</h4>
-        <p class="meta">AI platform · Internal tooling</p>
+      <ul style="margin-top:1rem; padding-left:1.25rem;">
+        <li>Internal tool UX audits</li>
+        <li>AI prompt & response UX reviews</li>
+        <li>Performance-perception fixes</li>
+        <li>Safety & misconfiguration risk reduction</li>
+      </ul>
 
-        <div class="ux-carousel">
-          <ol class="carousel__viewport">
-            <li class="carousel__slide"><img src="assets/mlops-dashboard-ux-audit/1.png" alt=""></li>
-            <li class="carousel__slide"><img src="assets/mlops-dashboard-ux-audit/2.png" alt=""></li>
-          </ol>
-        </div>
-
-        <ul>
-          <li>Improved clarity of model states and failures</li>
-          <li>Reduced monitoring friction under pressure</li>
-          <li>UX-only improvements increased perceived speed</li>
-        </ul>
+      <div style="margin-top:1.5rem;">
+        <a href="projects.html" class="btn btn-primary">View Portfolio</a>
+        <a href="mailto:contact@everydayuxlab.com" class="btn btn-secondary">Request Audit</a>
       </div>
-
-      <!-- PROJECT 2 -->
-      <div class="portfolio-block">
-        <h4>Admin Panel UX Review for Data Infrastructure Platform</h4>
-        <p class="meta">Data platform · Admin UX</p>
-
-        <div class="ux-carousel">
-          <ol class="carousel__viewport">
-            <li class="carousel__slide"><img src="assets/data-platform-admin-ux/1.png"></li>
-            <li class="carousel__slide"><img src="assets/data-platform-admin-ux/2.png"></li>
-            <li class="carousel__slide"><img src="assets/data-platform-admin-ux/3.png"></li>
-            <li class="carousel__slide"><img src="assets/data-platform-admin-ux/4.png"></li>
-            <li class="carousel__slide"><img src="assets/data-platform-admin-ux/5.png"></li>
-          </ol>
-        </div>
-
-        <ul>
-          <li>Reduced operator confusion during async jobs</li>
-          <li>Improved error visibility and recovery flows</li>
-          <li>No UI redesign required</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 3 -->
-      <div class="portfolio-block">
-        <h4>AI Prompt Flow & Response UX Review</h4>
-        <p class="meta">AI product · Prompt UX</p>
-
-        <div class="ux-carousel">
-          <ol class="carousel__viewport">
-            <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/1.png"></li>
-            <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/2.png"></li>
-            <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/3.png"></li>
-            <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/4.png"></li>
-            <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/5.png"></li>
-          </ol>
-        </div>
-
-        <ul>
-          <li>Improved user trust in AI responses</li>
-          <li>Clearer retry and fallback states</li>
-          <li>Model-agnostic UX fixes</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 4 -->
-      <div class="portfolio-block">
-        <h4>Developer Configuration Tool UX Audit</h4>
-        <p class="meta">Developer tools · Configuration UX</p>
-
-        <div class="ux-carousel">
-          <ol class="carousel__viewport">
-            <li class="carousel__slide"><img src="assets/developer-config-ux-audit/1.png"></li>
-            <li class="carousel__slide"><img src="assets/developer-config-ux-audit/2.png"></li>
-            <li class="carousel__slide"><img src="assets/developer-config-ux-audit/3.png"></li>
-            <li class="carousel__slide"><img src="assets/developer-config-ux-audit/4.png"></li>
-            <li class="carousel__slide"><img src="assets/developer-config-ux-audit/5.png"></li>
-          </ol>
-        </div>
-
-        <ul>
-          <li>Reduced accidental misconfiguration risk</li>
-          <li>Improved defaults and confirmations</li>
-          <li>Lowered dependency on docs</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 5 -->
-      <div class="portfolio-block">
-        <h4>Performance Perception Review for Internal Analytics Tool</h4>
-        <p class="meta">Analytics platform · Performance UX</p>
-
-        <div class="ux-carousel">
-          <ol class="carousel__viewport">
-            <li class="carousel__slide"><img src="assets/performance-perception-ux/1.png"></li>
-            <li class="carousel__slide"><img src="assets/performance-perception-ux/2.png"></li>
-            <li class="carousel__slide"><img src="assets/performance-perception-ux/3.png"></li>
-            <li class="carousel__slide"><img src="assets/performance-perception-ux/4.png"></li>
-            <li class="carousel__slide"><img src="assets/performance-perception-ux/5.png"></li>
-          </ol>
-        </div>
-
-        <ul>
-          <li>Improved perceived responsiveness</li>
-          <li>Reduced frustration without backend changes</li>
-          <li>Aligned UX with system expectations</li>
-        </ul>
-      </div>
-
     </div>
-  </div>
 
-</main>
+  </main>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" alt="">
+  <footer class="footer">
+    <p>© 2026 EverydayUXLab — UX & Performance Audits</p>
+  </footer>
+
 </div>
 
-<!-- LIGHTBOX SCRIPT -->
-<script>
-  document.querySelectorAll('.carousel__slide img').forEach(img => {
-    img.addEventListener('click', () => {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-
-  document.getElementById('lightbox').addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'none';
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
