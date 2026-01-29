@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — EverydayUXLab</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — EverydayUXLab</title>
   <script>
     if (localStorage.getItem('daynight-theme') === 'carbon') {
       document.documentElement.classList.add('carbon');
     }
   </script>
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -23,64 +21,117 @@
         <div class="logo-icon">UX</div>
         EverydayUXLab
       </a>
+      
+      <div class="theme-toggle">
+        <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')">☀</button>
+        <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')">🌙</button>
+      </div>
     </div>
   </nav>
 
   <main class="main-content">
 
-    <header class="page-header">
-      <h1 class="greeting">Portfolio</h1>
-      <p class="greeting-sub">Anonymized UX audit case studies</p>
-    </header>
+    <div class="page-header">
+      <h1 class="greeting">UX Audit Portfolio</h1>
+      <p class="greeting-sub">Anonymized audit showcases from recent engagements.</p>
+    </div>
 
-    <div class="card">
-
-      <!-- PROJECT 1 -->
-      <div class="ux-project">
+    <div class="ux-project">
+      <div class="project-header">
         <h4>Internal MLOps Monitoring Dashboard</h4>
-        <p class="meta">AI platform · Reduced operational uncertainty</p>
+        <p class="meta">AI platform · Internal tooling</p>
+      </div>
+      
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active"><img src="assets/mlops-dashboard-ux-audit/1.png" alt="MLOps 1"></div>
+        <div class="carousel-slide"><img src="assets/mlops-dashboard-ux-audit/2.png" alt="MLOps 2"></div>
+        
+        <button class="carousel-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+        <div class="carousel-counter">1 / 2</div>
+      </div>
+    </div>
 
-        <div class="slideshow-container">
-          <img class="ux-slide mlops" src="assets/mlops-dashboard-ux-audit/1.png">
-          <img class="ux-slide mlops" src="assets/mlops-dashboard-ux-audit/2.png">
+    <div class="ux-project">
+      <div class="project-header">
+        <h4>Admin Panel UX Review — Data Platform</h4>
+        <p class="meta">Admin tools · Data infra</p>
+      </div>
+      
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active"><img src="assets/data-platform-admin-ux/1.png" alt="Data 1"></div>
+        <div class="carousel-slide"><img src="assets/data-platform-admin-ux/2.png" alt="Data 2"></div>
+        <div class="carousel-slide"><img src="assets/data-platform-admin-ux/3.png" alt="Data 3"></div>
+        <div class="carousel-slide"><img src="assets/data-platform-admin-ux/4.png" alt="Data 4"></div>
+        <div class="carousel-slide"><img src="assets/data-platform-admin-ux/5.png" alt="Data 5"></div>
 
-          <button class="slide-btn prev" onclick="plusSlides(-1, 'mlops')">&#10094;</button>
-          <button class="slide-btn next" onclick="plusSlides(1, 'mlops')">&#10095;</button>
-        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+        <div class="carousel-counter">1 / 5</div>
+      </div>
+    </div>
 
-        <div class="slide-indicators">
-          <button onclick="currentSlide(1, 'mlops')">1</button>
-          <button onclick="currentSlide(2, 'mlops')">2</button>
-        </div>
+    <div class="ux-project">
+      <div class="project-header">
+        <h4>AI Prompt Flow & Response UX</h4>
+        <p class="meta">AI product · Prompt UX</p>
       </div>
 
-      <!-- PROJECT 2 -->
-      <div class="ux-project">
-        <h4>Admin Panel UX Review</h4>
-        <p class="meta">Data platform · Improved error discoverability</p>
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active"><img src="assets/ai-prompt-flow-ux/1.png" alt="AI 1"></div>
+        <div class="carousel-slide"><img src="assets/ai-prompt-flow-ux/2.png" alt="AI 2"></div>
+        <div class="carousel-slide"><img src="assets/ai-prompt-flow-ux/3.png" alt="AI 3"></div>
+        <div class="carousel-slide"><img src="assets/ai-prompt-flow-ux/4.png" alt="AI 4"></div>
+        <div class="carousel-slide"><img src="assets/ai-prompt-flow-ux/5.png" alt="AI 5"></div>
 
-        <div class="slideshow-container">
-          <img class="ux-slide admin" src="assets/data-platform-admin-ux/1.png">
-          <img class="ux-slide admin" src="assets/data-platform-admin-ux/2.png">
-          <img class="ux-slide admin" src="assets/data-platform-admin-ux/3.png">
-
-          <button class="slide-btn prev" onclick="plusSlides(-1, 'admin')">&#10094;</button>
-          <button class="slide-btn next" onclick="plusSlides(1, 'admin')">&#10095;</button>
-        </div>
-
-        <div class="slide-indicators">
-          <button onclick="currentSlide(1, 'admin')">1</button>
-          <button onclick="currentSlide(2, 'admin')">2</button>
-          <button onclick="currentSlide(3, 'admin')">3</button>
-        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+        <div class="carousel-counter">1 / 5</div>
       </div>
+    </div>
 
+    <div class="ux-project">
+      <div class="project-header">
+        <h4>Developer Configuration UX Audit</h4>
+        <p class="meta">Developer tools</p>
+      </div>
+      
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active"><img src="assets/developer-config-ux-audit/1.png" alt="Dev 1"></div>
+        <div class="carousel-slide"><img src="assets/developer-config-ux-audit/2.png" alt="Dev 2"></div>
+        <div class="carousel-slide"><img src="assets/developer-config-ux-audit/3.png" alt="Dev 3"></div>
+        <div class="carousel-slide"><img src="assets/developer-config-ux-audit/4.png" alt="Dev 4"></div>
+        <div class="carousel-slide"><img src="assets/developer-config-ux-audit/5.png" alt="Dev 5"></div>
+
+        <button class="carousel-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+        <div class="carousel-counter">1 / 5</div>
+      </div>
+    </div>
+
+    <div class="ux-project">
+      <div class="project-header">
+        <h4>Performance Perception Review</h4>
+        <p class="meta">Analytics platform</p>
+      </div>
+      
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active"><img src="assets/performance-perception-ux/1.png" alt="Perf 1"></div>
+        <div class="carousel-slide"><img src="assets/performance-perception-ux/2.png" alt="Perf 2"></div>
+        <div class="carousel-slide"><img src="assets/performance-perception-ux/3.png" alt="Perf 3"></div>
+        <div class="carousel-slide"><img src="assets/performance-perception-ux/4.png" alt="Perf 4"></div>
+        <div class="carousel-slide"><img src="assets/performance-perception-ux/5.png" alt="Perf 5"></div>
+
+        <button class="carousel-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+        <div class="carousel-counter">1 / 5</div>
+      </div>
     </div>
 
   </main>
 
   <footer class="footer">
-    © 2026 EverydayUXLab
+    <p>© 2026 EverydayUXLab</p>
   </footer>
 
 </div>

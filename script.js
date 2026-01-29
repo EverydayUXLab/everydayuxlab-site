@@ -1,5 +1,5 @@
 // ===============================
-// Theme
+// Theme Management
 // ===============================
 function initTheme() {
   const theme = localStorage.getItem('daynight-theme');
@@ -25,40 +25,59 @@ function updateThemeButtons(theme) {
 }
 
 // ===============================
-// Slideshow Logic
+// Carousel Logic (Universal)
 // ===============================
-const slideIndex = {};
+function moveSlide(button, direction) {
+  // Find the wrapper relative to the button clicked
+  const wrapper = button.closest('.carousel-wrapper');
+  const slides = wrapper.querySelectorAll('.carousel-slide');
+  const counter = wrapper.querySelector('.carousel-counter');
+  
+  let activeIndex = 0;
+  
+  // Find current active index
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains('active')) {
+      activeIndex = index;
+      slide.classList.remove('active');
+    }
+  });
 
-function showSlides(n, group) {
-  const slides = document.querySelectorAll(`.ux-slide.${group}`);
-  const dots = document.querySelectorAll(`.slide-indicators button`);
+  // Calculate new index
+  let newIndex = activeIndex + direction;
+  if (newIndex >= slides.length) newIndex = 0;
+  if (newIndex < 0) newIndex = slides.length - 1;
 
-  if (!slideIndex[group]) slideIndex[group] = 1;
-
-  if (n > slides.length) slideIndex[group] = 1;
-  if (n < 1) slideIndex[group] = slides.length;
-
-  slides.forEach(slide => slide.style.display = "none");
-  dots.forEach(dot => dot.classList.remove("active"));
-
-  slides[slideIndex[group] - 1].style.display = "block";
-  dots[slideIndex[group] - 1].classList.add("active");
-}
-
-function plusSlides(n, group) {
-  slideIndex[group] = (slideIndex[group] || 1) + n;
-  showSlides(slideIndex[group], group);
-}
-
-function currentSlide(n, group) {
-  slideIndex[group] = n;
-  showSlides(n, group);
+  // Set active
+  slides[newIndex].classList.add('active');
+  
+  // Update counter text
+  if (counter) {
+    counter.textContent = `${newIndex + 1} / ${slides.length}`;
+  }
 }
 
 // ===============================
-// Init
+// Lightbox (Image Modal)
+// ===============================
+function initLightbox() {
+  document.body.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG' && e.target.closest('.carousel-slide')) {
+      const modal = document.createElement('div');
+      modal.className = 'ux-modal active';
+      modal.innerHTML = `<img src="${e.target.src}">`;
+      
+      // Close on click
+      modal.onclick = () => modal.remove();
+      document.body.appendChild(modal);
+    }
+  });
+}
+
+// ===============================
+// Initialization
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
-  ["mlops", "admin"].forEach(group => showSlides(1, group));
+  initLightbox();
 });
