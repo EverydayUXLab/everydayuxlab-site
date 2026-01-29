@@ -1,120 +1,100 @@
-:root {
-  --text: #0f172a;
-  --muted: #475569;
-  --border: #e5e7eb;
-  --accent: #2563eb;
-  --bg-dark: #0b0f14;
-}
+/* ==============================
+   Compact UX Carousel (100px)
+   ============================== */
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: var(--text);
-  background: #fff;
-}
-
-.container {
-  max-width: 960px;
-  padding: 64px 24px;
-  margin: auto;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 16px;
-}
-
-.subtitle {
-  color: var(--muted);
-  max-width: 700px;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.section {
-  margin-top: 80px;
-}
-
-.portfolio-item {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 40px;
-}
-
-.portfolio-item h3 {
-  margin-bottom: 6px;
-}
-
-.meta {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-/* ============================
-   COMPACT HORIZONTAL SLIDER
-   ============================ */
-
-.slider.compact {
+.ux-carousel {
   position: relative;
   height: 100px;
-  background: var(--bg-dark);
-  border-radius: 8px;
+  margin: 16px 0 24px;
   overflow: hidden;
-  margin: 12px 0 16px;
+  border-radius: 8px;
+  background: #0b0f14;
 }
 
-.slider.compact .slides {
+/* Viewport */
+.carousel__viewport {
   display: flex;
   height: 100%;
-  transition: transform 0.3s ease;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
-.slider.compact img {
-  height: 100px;
-  width: 120px;
+.carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* Slides */
+.carousel__slide {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  cursor: zoom-in;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
+  display: block;
   border-right: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.25s ease;
 }
 
-.slider.compact button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  border: none;
-  color: white;
-  font-size: 18px;
-  padding: 4px 10px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 4px;
+.carousel__slide img:hover {
+  transform: scale(1.05);
 }
 
-.slider.compact .prev { left: 6px; }
-.slider.compact .next { right: 6px; }
+/* ==============================
+   Optional Auto-scroll (Desktop)
+   ============================== */
 
-.slider.compact button:hover {
+@media (hover: hover) {
+  .carousel__viewport {
+    animation: autoscroll 18s linear infinite;
+  }
+
+  .ux-carousel:hover .carousel__viewport {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes autoscroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==============================
+   Lightbox (Image Magnify)
+   ============================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
   background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 
-.portfolio-item ul {
-  padding-left: 18px;
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
-.portfolio-item li {
-  margin-bottom: 6px;
+/* Mobile */
+@media (max-width: 600px) {
+  .ux-carousel {
+    height: 80px;
+  }
+
+  .carousel__slide {
+    width: 120px;
+  }
 }

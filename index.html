@@ -25,26 +25,25 @@
   <section class="section">
     <h2>Selected Work</h2>
 
-    <!-- PROJECT 1 -->
+    <!-- PROJECT 1 (2 images only) -->
     <div class="portfolio-item">
       <h3>Internal MLOps Monitoring Dashboard UX Audit</h3>
       <p class="meta">AI platform · Internal tooling</p>
 
-      <div class="slider compact" data-slider>
-        <button class="prev">‹</button>
-        <div class="slides">
-          <img src="assets/mlops-dashboard-ux-audit/1.png" alt="">
-          <img src="assets/mlops-dashboard-ux-audit/2.png" alt="">
-          <img src="assets/mlops-dashboard-ux-audit/3.png" alt="">
-          <img src="assets/mlops-dashboard-ux-audit/4.png" alt="">
-          <img src="assets/mlops-dashboard-ux-audit/5.png" alt="">
-        </div>
-        <button class="next">›</button>
-      </div>
+      <section class="ux-carousel">
+        <ol class="carousel__viewport">
+          <li class="carousel__slide">
+            <img src="assets/mlops-dashboard-ux-audit/1.png" alt="MLOps dashboard audit screenshot">
+          </li>
+          <li class="carousel__slide">
+            <img src="assets/mlops-dashboard-ux-audit/2.png" alt="MLOps dashboard audit screenshot">
+          </li>
+        </ol>
+      </section>
 
       <ul>
-        <li>Improved clarity of system states and failures</li>
-        <li>Reduced monitoring friction for ML engineers</li>
+        <li>Improved clarity of system states, failures, and retries</li>
+        <li>Reduced monitoring friction for ML and platform engineers</li>
         <li>UX-only changes improved perceived performance</li>
       </ul>
     </div>
@@ -54,22 +53,20 @@
       <h3>Admin Panel UX Review for Data Infrastructure Platform</h3>
       <p class="meta">Data platform · Admin UX</p>
 
-      <div class="slider compact" data-slider>
-        <button class="prev">‹</button>
-        <div class="slides">
-          <img src="assets/data-platform-admin-ux/1.png" alt="">
-          <img src="assets/data-platform-admin-ux/2.png" alt="">
-          <img src="assets/data-platform-admin-ux/3.png" alt="">
-          <img src="assets/data-platform-admin-ux/4.png" alt="">
-          <img src="assets/data-platform-admin-ux/5.png" alt="">
-        </div>
-        <button class="next">›</button>
-      </div>
+      <section class="ux-carousel">
+        <ol class="carousel__viewport">
+          <li class="carousel__slide"><img src="assets/data-platform-admin-ux/1.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/data-platform-admin-ux/2.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/data-platform-admin-ux/3.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/data-platform-admin-ux/4.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/data-platform-admin-ux/5.png" alt=""></li>
+        </ol>
+      </section>
 
       <ul>
-        <li>Reduced operator confusion during async jobs</li>
-        <li>Improved error visibility and recovery paths</li>
-        <li>No UI redesign required</li>
+        <li>Reduced operator confusion during async ingestion jobs</li>
+        <li>Improved error visibility and recovery flows</li>
+        <li>Aligned UI behavior with backend constraints</li>
       </ul>
     </div>
 
@@ -78,22 +75,64 @@
       <h3>AI Prompt Flow & Response UX Review</h3>
       <p class="meta">AI product · Prompt UX</p>
 
-      <div class="slider compact" data-slider>
-        <button class="prev">‹</button>
-        <div class="slides">
-          <img src="assets/ai-prompt-flow-ux/1.png" alt="">
-          <img src="assets/ai-prompt-flow-ux/2.png" alt="">
-          <img src="assets/ai-prompt-flow-ux/3.png" alt="">
-          <img src="assets/ai-prompt-flow-ux/4.png" alt="">
-          <img src="assets/ai-prompt-flow-ux/5.png" alt="">
-        </div>
-        <button class="next">›</button>
-      </div>
+      <section class="ux-carousel">
+        <ol class="carousel__viewport">
+          <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/1.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/2.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/3.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/4.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/ai-prompt-flow-ux/5.png" alt=""></li>
+        </ol>
+      </section>
 
       <ul>
-        <li>Improved user trust in AI responses</li>
-        <li>Clearer retry and fallback feedback</li>
-        <li>Model-agnostic UX fixes</li>
+        <li>Improved prompt clarity and system guidance</li>
+        <li>Clearer retry, fallback, and uncertainty states</li>
+        <li>Increased user trust without model changes</li>
+      </ul>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="portfolio-item">
+      <h3>Developer Configuration Tool UX Audit</h3>
+      <p class="meta">Developer tools · Configuration UX</p>
+
+      <section class="ux-carousel">
+        <ol class="carousel__viewport">
+          <li class="carousel__slide"><img src="assets/developer-config-ux-audit/1.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/developer-config-ux-audit/2.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/developer-config-ux-audit/3.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/developer-config-ux-audit/4.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/developer-config-ux-audit/5.png" alt=""></li>
+        </ol>
+      </section>
+
+      <ul>
+        <li>Reduced accidental misconfiguration risk</li>
+        <li>Improved validation, defaults, and confirmations</li>
+        <li>Lowered dependency on external documentation</li>
+      </ul>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="portfolio-item">
+      <h3>Performance Perception Review for Internal Analytics Tool</h3>
+      <p class="meta">Analytics platform · Performance UX</p>
+
+      <section class="ux-carousel">
+        <ol class="carousel__viewport">
+          <li class="carousel__slide"><img src="assets/performance-perception-ux/1.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/performance-perception-ux/2.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/performance-perception-ux/3.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/performance-perception-ux/4.png" alt=""></li>
+          <li class="carousel__slide"><img src="assets/performance-perception-ux/5.png" alt=""></li>
+        </ol>
+      </section>
+
+      <ul>
+        <li>Improved perceived responsiveness without backend changes</li>
+        <li>Reduced frustration during long-running queries</li>
+        <li>Better alignment between system behavior and expectations</li>
       </ul>
     </div>
 
@@ -101,22 +140,25 @@
 
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="">
+</div>
+
+<!-- LIGHTBOX SCRIPT -->
 <script>
-document.querySelectorAll('[data-slider]').forEach(slider => {
-  const slides = slider.querySelector('.slides');
-  const images = slider.querySelectorAll('img');
-  let index = 0;
-
-  slider.querySelector('.next').addEventListener('click', () => {
-    index = Math.min(index + 1, images.length - 1);
-    slides.style.transform = `translateX(-${index * 120}px)`;
+  document.querySelectorAll('.carousel__slide img').forEach(img => {
+    img.addEventListener('click', () => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
   });
 
-  slider.querySelector('.prev').addEventListener('click', () => {
-    index = Math.max(index - 1, 0);
-    slides.style.transform = `translateX(-${index * 120}px)`;
+  document.getElementById('lightbox').addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'none';
   });
-});
 </script>
 
 </body>
