@@ -1,104 +1,243 @@
 /* ===============================
-   Unified Section System
+   1. Base Variables & Reset
    =============================== */
-
-.unified-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+:root {
+  /* Light Theme (Snow) */
+  --bg-app: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border: #e5e7eb;
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  
+  --radius: 8px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Two-column lists */
-.unified-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+/* Dark Theme (Carbon) */
+html.carbon {
+  --bg-app: #0f1115;
+  --bg-card: #181b21;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --border: #2d333b;
+  --nav-bg: rgba(15, 17, 21, 0.9);
+  
+  --shadow-sm: none;
+  --shadow-md: none;
 }
 
-.unified-list {
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
 
-.unified-list li {
-  margin-bottom: 0.5rem;
-  color: var(--text-muted);
-  position: relative;
-  padding-left: 1.2rem;
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.unified-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
+/* ===============================
+   2. Layout & Typography
+   =============================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   3. Navigation
+   =============================== */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-icon {
+  background: var(--primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 1rem;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.theme-btn.active {
+  background: var(--border);
+  opacity: 1;
+}
+
+html.carbon .theme-btn.active {
+  background: #333;
+}
+
+/* ===============================
+   4. Hero Section
+   =============================== */
+.page-header {
+  margin: 3rem 0 2.5rem;
+  text-align: left;
+}
+
+.greeting {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.greeting-sub {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.greeting-sub strong {
+  color: var(--text-main);
+}
+
+/* ===============================
+   5. Stats Grid
+   =============================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--primary);
 }
 
-/* Steps */
-.unified-steps {
+/* ===============================
+   6. General Cards & Sections
+   =============================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+/* ===============================
+   7. Unified Section (Your Logic)
+   =============================== */
+.unified-section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.unified-step {
-  display: flex;
-  gap: 1rem;
-}
-
-.step-number {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.12);
-  color: var(--primary);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.step-text {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* Authority section */
-.authority-section {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.authority-content {
-  max-width: 720px;
-  margin: 0.75rem auto 0;
-}
-
-.authority-content p {
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .unified-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================
-   Audit Scope (What We Audit)
-   =============================== */
-
+/* Audit Scope (Bullet Points) */
 .audit-scope {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem 1.5rem;
-  margin: 1rem 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem 2rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .audit-scope-item {
@@ -114,72 +253,164 @@
   left: 0;
   color: var(--primary);
   font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
 }
 
-/* ===============================
-   Audit Workflow
-   =============================== */
-
+/* Audit Workflow (Steps) */
 .audit-workflow {
   display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .audit-workflow {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 
 .workflow-step {
-  max-width: 260px;
-}
-
-.workflow-icon {
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.25rem;
+  flex: 1;
 }
 
 .workflow-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
 }
 
 .workflow-text {
   font-size: 0.9rem;
   color: var(--text-muted);
+  line-height: 1.4;
 }
 
-.workflow-arrow {
-  font-size: 1.2rem;
+/* Pricing List */
+.pricing-points p {
   color: var(--text-muted);
-  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 /* ===============================
-   Pricing
+   8. Buttons & Forms
    =============================== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+}
 
-.pricing-points p {
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .audit-scope {
-    grid-template-columns: 1fr;
-  }
-
-  .audit-workflow {
-    flex-direction: column;
-  }
-
-  .workflow-arrow {
-    display: none;
-  }
+.form-input, 
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg-app);
+  color: var(--text-main);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
 }
 
-.cta-row {
-  margin-top: 1.5rem;
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
 }
+
+.form-input:focus, 
+.form-textarea:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+/* ===============================
+   9. Footer
+   =============================== */
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.authority-content {
+  margin-top: 1rem;
+}
+
+.authority-content p {
+  margin-bottom: 0.25rem;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+  .greeting { font-size: 1.75rem; }
+  .card { padding: 1.5rem; }
+}
+
+/* ===============================
+   Lightbox / Modal Styles
+   =============================== */
+.ux-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+  padding: 2rem;
+}
+
+.ux-modal.active {
+  opacity: 1;
+}
+
+.ux-modal img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 4px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* ===============================
+   @author EverydayUXLab
+   @site everydayuxlab.com
+   @year 2026
+   =============================== */

@@ -5,47 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>EverydayUXLab — UX Audits for Internal Tools & Engineering Systems</title>
+  <meta name="description" content="Performance-driven UX audits for internal tools, admin panels, and engineering platforms. Reduce operational friction without backend rewrites." />
 
-  <meta
-    name="description"
-    content="Performance-driven UX audits for internal tools, admin panels, AI workflows, and engineering platforms. Reduce confusion and operational friction without backend rewrites."
-  />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="EverydayUXLab — UX Audits for Internal Systems">
-  <meta property="og:description" content="We help engineering-led teams improve clarity, trust, and performance perception in internal tools and AI platforms.">
-  <meta property="og:image" content="https://everydayuxlab.com/assets/og-image.png">
+  <meta property="og:description" content="We help engineering-led teams improve clarity and performance perception in internal tools.">
   <meta property="og:url" content="https://everydayuxlab.com">
   <meta property="og:type" content="website">
 
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "EverydayUXLab",
-    "url": "https://everydayuxlab.com",
-    "description": "Performance-driven UX audits for internal tools, admin panels, AI workflows, and engineering systems.",
-    "serviceType": "UX Audit",
-    "areaServed": "Worldwide"
-  }
-  </script>
+  <link rel="stylesheet" href="style.css" />
 
   <script>
+    // Prevent flash of wrong theme
     if (localStorage.getItem('daynight-theme') === 'carbon') {
       document.documentElement.classList.add('carbon');
     }
   </script>
-
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <div class="app-container">
 
-  <!-- Navigation -->
   <nav class="top-nav">
     <div class="nav-container">
       <a href="index.html" class="logo">
@@ -54,15 +37,14 @@
       </a>
 
       <div class="theme-toggle">
-        <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')">☀</button>
-        <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')">🌙</button>
+        <button class="theme-btn theme-btn-snow active" aria-label="Light Mode" onclick="setTheme('snow')">☀</button>
+        <button class="theme-btn theme-btn-carbon" aria-label="Dark Mode" onclick="setTheme('carbon')">🌙</button>
       </div>
     </div>
   </nav>
 
   <main class="main-content">
 
-    <!-- Hero -->
     <header class="page-header">
       <h1 class="greeting">UX Audits for Internal Tools & Engineering Systems</h1>
       <p class="greeting-sub">
@@ -72,45 +54,55 @@
       </p>
     </header>
 
-    <!-- Stats -->
     <section class="stats-grid">
-      <div class="stat-card"><div class="stat-label">Audit Delivery</div><div class="stat-value">7–10 Days</div></div>
-      <div class="stat-card"><div class="stat-label">Backend Changes</div><div class="stat-value">None</div></div>
-      <div class="stat-card"><div class="stat-label">Primary Outcome</div><div class="stat-value">Clarity & Trust</div></div>
-      <div class="stat-card"><div class="stat-label">Best Fit</div><div class="stat-value">Internal Tools</div></div>
+      <div class="stat-card">
+        <div class="stat-label">Audit Delivery</div>
+        <div class="stat-value">7–10 Days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Backend Changes</div>
+        <div class="stat-value">None</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Primary Outcome</div>
+        <div class="stat-value">Clarity & Trust</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Best Fit</div>
+        <div class="stat-value">Internal Tools</div>
+      </div>
     </section>
 
-    <!-- Why -->
     <section class="card unified-section">
       <h2 class="card-title">Why UX Audits for Internal Tools Matter</h2>
-      <h3 class="card-subtitle">
-        Internal systems fail quietly — through confusion, misinterpretation,
-        and slow operational decisions.
-      </h3>
-      <h3 class="card-subtitle">
-        We specialize in internal tools UX audits for admin panels,
-        developer tools, AI workflows, and operational dashboards.
-      </h3>
-      <h3 class="card-subtitle">
-        Our audits respect real engineering constraints — not visual polish.
-      </h3>
+      <div class="text-block">
+        <p class="card-subtitle">
+          Internal systems fail quietly — through confusion, misinterpretation,
+          and slow operational decisions.
+        </p>
+        <p class="card-subtitle">
+          We specialize in internal tools UX audits for admin panels,
+          developer tools, AI workflows, and operational dashboards.
+        </p>
+        <p class="card-subtitle">
+          Our audits respect real engineering constraints — not visual polish.
+        </p>
+      </div>
     </section>
 
-    <!-- What We Audit (IMPROVED) -->
     <section class="card unified-section">
-      <h2 class="card-title">What We Audit in Engineering & Internal Systems</h2>
-
-      <h3 class="card-subtitle">
+      <h2 class="card-title">What We Audit in Engineering Systems</h2>
+      <p class="card-subtitle">
         Focused UX audits across internal platforms that support engineering,
         operations, and decision-making.
-      </h3>
+      </p>
 
       <div class="audit-scope">
         <div class="audit-scope-item">Internal tools & admin panels</div>
         <div class="audit-scope-item">Error states & edge cases</div>
         <div class="audit-scope-item">Configuration & misconfiguration risk</div>
         <div class="audit-scope-item">AI prompt & response UX</div>
-        <div class="audit-scope-item">Performance perception & system feedback</div>
+        <div class="audit-scope-item">Performance perception & feedback</div>
       </div>
 
       <div class="cta-row">
@@ -118,18 +110,16 @@
       </div>
     </section>
 
-    <!-- How It Works -->
     <section class="card unified-section">
       <h2 class="card-title">How an Internal UX Audit Works</h2>
-
-      <h3 class="card-subtitle">
+      <p class="card-subtitle">
         A lightweight, engineering-friendly workflow designed to surface
         high-impact UX risks quickly.
-      </h3>
+      </p>
 
       <div class="audit-workflow">
         <div class="workflow-step">
-          <h4 class="workflow-title">System Understanding</h4>
+          <h4 class="workflow-title">1. System Understanding</h4>
           <p class="workflow-text">
             Review real workflows, users, constraints, and failure modes
             based on how the system is actually used.
@@ -137,7 +127,7 @@
         </div>
 
         <div class="workflow-step">
-          <h4 class="workflow-title">UX Risk Analysis</h4>
+          <h4 class="workflow-title">2. UX Risk Analysis</h4>
           <p class="workflow-text">
             Identify confusion points, trust erosion, and UX patterns
             that slow decisions or increase operational risk.
@@ -145,7 +135,7 @@
         </div>
 
         <div class="workflow-step">
-          <h4 class="workflow-title">Actionable Recommendations</h4>
+          <h4 class="workflow-title">3. Actionable Report</h4>
           <p class="workflow-text">
             Deliver prioritized, engineering-friendly recommendations
             that work within your existing architecture.
@@ -154,10 +144,8 @@
       </div>
     </section>
 
-    <!-- Pricing -->
     <section class="card unified-section">
       <h2 class="card-title">UX Audit Engagement & Pricing</h2>
-
       <p class="card-subtitle">
         Engagements are fixed-scope and time-boxed,
         designed to minimize disruption to engineering teams.
@@ -170,22 +158,21 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="card unified-section">
       <h2 class="card-title">Request an Internal UX Audit</h2>
-      <h3 class="card-subtitle">We respond within 24–48 hours.</h3>
+      <p class="card-subtitle">We respond within 24–48 hours.</p>
 
-      <form action="https://formspree.io/f/xwvbnzzq" method="POST">
+      <form action="https://formspree.io/f/xwvbnzzq" method="POST" class="contact-form">
         <input type="hidden" name="_subject" value="New EverydayUXLab Audit Request">
 
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" name="email" class="form-input" required>
+          <input type="email" name="email" class="form-input" required placeholder="name@company.com">
         </div>
 
         <div class="form-group">
           <label class="form-label">Project Details</label>
-          <textarea name="message" class="form-textarea" required></textarea>
+          <textarea name="message" class="form-textarea" required placeholder="Briefly describe your internal tool or system..."></textarea>
         </div>
 
         <button class="btn btn-primary">Send Request</button>
@@ -194,17 +181,14 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    © 2026 EverydayUXLab — UX & Performance Audits
-
-    <section class="authority-section">
-      <h3 class="authority-title">Built for Engineering-Led Teams</h3>
+    <div class="footer-content">
+      © 2026 EverydayUXLab — UX & Performance Audits
       <div class="authority-content">
         <p>Hands-on experience with internal systems and production workflows.</p>
         <p>Designed to respect architecture, risk, and limited engineering time.</p>
       </div>
-    </section>
+    </div>
   </footer>
 
 </div>
