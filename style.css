@@ -541,16 +541,15 @@ html.carbon .carousel-btn:hover {
   pointer-events: none;
 }
 
-/* Option C: Focus Style */
-.logo-icon.focus {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  box-shadow: 2px 2px 0 var(--text-muted); /* Adds a tactical 3D feel */
+/* Option A: Terminal Style */
+.logo-icon.terminal {
+  background: var(--text-main); /* Dark in light mode, Light in dark mode */
+  color: var(--bg-app);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: -1px;
 }
 
 /* ===============================
