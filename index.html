@@ -174,26 +174,57 @@
       </p>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact / Request Audit -->
     <section class="card">
-      <h3 class="card-title">Engagement & Pricing</h3>
+      <h3 class="card-title">Request an Audit</h3>
 
       <p class="card-subtitle">
-        Audits are scoped based on system complexity, workflows,
-        and overall risk surface area.
+        Tell us about your internal tool or platform.
+        We review requests within <strong>24–48 hours</strong> and respond with next steps.
       </p>
 
-      <p class="card-subtitle">
-        Engagements are fixed-scope and time-boxed,
-        priced as a professional audit — not a design retainer.
-      </p>
+      <form
+        action="https://formspree.io/f/xwvbnzzq"
+        method="POST"
+      >
 
-      <p class="card-subtitle">
-        If the audit isn’t a good fit, we’ll tell you upfront.
-      </p>
+        <!-- Optional: email subject -->
+        <input type="hidden" name="_subject" value="New EverydayUXLab Audit Request">
+
+        <!-- Optional: disable Formspree captcha if needed -->
+        <!-- <input type="hidden" name="_captcha" value="false"> -->
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="you@company.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Project Details</label>
+          <textarea
+            id="message"
+            name="message"
+            class="form-textarea"
+            placeholder="Describe the system, workflows, and where confusion or friction occurs…"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Send Request
+        </button>
+
+      </form>
     </section>
 
-  </main>
+      </main>
 
   <!-- Footer -->
   <footer class="footer">
