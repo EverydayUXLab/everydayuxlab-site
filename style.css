@@ -495,3 +495,27 @@ ul { list-style: none; }
   color: var(--text-secondary);
   line-height: 1.5;
 }
+
+/* ===============================
+   Authority Section Alignment
+   =============================== */
+
+.authority-section {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.authority-title {
+  margin-bottom: 1rem;
+}
+
+.authority-content {
+  max-width: 720px;        /* keeps it readable */
+  margin: 0 auto;         /* centers the block */
+  text-align: left;       /* readable paragraphs */
+}
+
+.authority-content .card-subtitle {
+  margin-bottom: 0.75rem;
+}
