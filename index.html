@@ -120,23 +120,43 @@
     <section class="card">
       <h3 class="card-title">How the Audit Works</h3>
 
-      <ul class="service-list">
-        <li>
-          <strong>1. System Understanding</strong><br>
-          We review real workflows, users, constraints, and failure modes —
-          focusing on how the system is actually used.
-        </li>
-        <li>
-          <strong>2. UX Risk & Clarity Analysis</strong><br>
-          We identify confusion points, hidden error states, and UX patterns
-          that slow decisions or erode trust.
-        </li>
-        <li>
-          <strong>3. Actionable Recommendations</strong><br>
-          You receive a concise audit report with prioritized,
-          engineering-friendly recommendations that work within your existing architecture.
-        </li>
-      </ul>
+      <div class="audit-steps">
+
+        <div class="audit-step">
+          <div class="audit-step-number">1</div>
+          <div class="audit-step-content">
+            <h4 class="audit-step-title">System Understanding</h4>
+            <p class="audit-step-text">
+              We review real workflows, users, constraints, and failure modes —
+              focusing on how the system is actually used in practice.
+            </p>
+          </div>
+        </div>
+
+        <div class="audit-step">
+          <div class="audit-step-number">2</div>
+          <div class="audit-step-content">
+            <h4 class="audit-step-title">UX Risk & Clarity Analysis</h4>
+            <p class="audit-step-text">
+              We identify confusion points, hidden error states, and UX patterns
+              that slow decisions or erode trust.
+            </p>
+          </div>
+        </div>
+
+        <div class="audit-step">
+          <div class="audit-step-number">3</div>
+          <div class="audit-step-content">
+            <h4 class="audit-step-title">Actionable Recommendations</h4>
+            <p class="audit-step-text">
+              You receive a concise audit report with prioritized,
+              engineering-friendly recommendations that work within
+              your existing architecture.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- Pricing Anchor -->
@@ -156,38 +176,21 @@
 
     <!-- Contact -->
     <section class="card">
-      <h3 class="card-title">Request an Audit</h3>
+      <h3 class="card-title">Engagement & Pricing</h3>
+
       <p class="card-subtitle">
-        Tell us about your internal tool or platform.
-        We review requests within <strong>24–48 hours</strong> and respond with next steps.
+        Audits are scoped based on system complexity, workflows,
+        and overall risk surface area.
       </p>
 
-      <form action="https://formspree.io/f/xwvbnzzq" method="POST">
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            class="form-input"
-            placeholder="you@company.com"
-            required
-          >
-        </div>
+      <p class="card-subtitle">
+        Engagements are fixed-scope and time-boxed,
+        priced as a professional audit — not a design retainer.
+      </p>
 
-        <div class="form-group">
-          <label class="form-label">Project Details</label>
-          <textarea
-            name="message"
-            class="form-textarea"
-            placeholder="Describe the system, workflows, and where confusion or friction occurs…"
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">
-          Send Request
-        </button>
-      </form>
+      <p class="card-subtitle">
+        If the audit isn’t a good fit, we’ll tell you upfront.
+      </p>
     </section>
 
   </main>
